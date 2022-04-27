@@ -1,0 +1,83 @@
+<%- include('partials/header') %>
+  <%- include('partials/navbar') %>
+
+    <h1 class="headerN">Hva er passport JS?</h1> <br>
+
+    <div class="para">
+      <p>Passport JS er autentiserings middleware som har støtte over 500 autentiserings
+        strategier. Rammeverket Passport JS kan bli brukt til hvilken som helst
+        Express-basert nettside. Noen egenskaper som er verdt å nevne med Passport JS er at det er: </p>
+
+      <div class="listLeft">
+        <li>Enkel pålogging med OpenID og OAuth</li>
+        <li>Enkel håndtering av suksess og feil</li>
+        <li>Støtter vedvarende økter </li>
+        <li>Dynamisk Scope og tillatelser</li>
+      </div>
+
+      <div class="listRight">
+        <li>Enkelt valg av nødvendige strategier</li>
+        <li>Kan enkelt implementere egne strategier</li>
+        <li>Monterer ikke ruter i applikasjonen din</li>
+        <li>Lite kode skriving for implementering</li>
+      </div>
+    </div> <br>
+
+
+    <h3 class="headerM">Passport.js strategier</h3> <br>
+
+    <div class="para shadow-lg p-3 ">
+      <p>Hver strategi bruker Passport JS rammeverk som en template.
+        Passport Local strategien bruker Cookies, express Session og litt autentiserings logikk.
+        Min nettside bruker Passport-Local strategien som gjør at jeg får en enkel og lett kode implementering. På hver
+        http forespørsel vil Passport bruke strategien for å
+        sjekke om forespørselen har en tillatelse til å ha tilgang til ressursene. Hvis brukeren ikke er autentisert så
+        vil serveren svare med en 401 error “uautorisert” og vil bli sendt til påloggingssiden.
+        Hvis brukeren er autentisert vil han få tilgang til http forespørselen.
+
+
+      </p>
+
+    </div>
+
+    <br>
+
+
+    <h3 class="headerM" id="Registrering">Registrering</h3> <br>
+
+    <div class="para">
+      <p>Når du trykker på knappen registrer så vil et par ting skje i bakgrunnen.
+        Serveren vil ta imot email og passord.
+        Deretter vil den salte og hashe det gjennom en plugin “Passport local mongoose”.
+        Etter at den har salte og hasha email og passord vil den sende det til databasen for lagring.</p>
+
+    </div>
+
+    <br>
+
+
+    <h3 class="headerM" id="Pålogging">Pålogging</h3> <br>
+
+    <div class="para">
+      <p>Når du trykker på knappen "Logg inn" så vil nettsiden sende det til serveren for behandling. Passordet vil bli
+        saltet og hashet akkurat som når du skal registrere deg. Det vil bli sjekket mot hva som er i databasen.
+        Etter dette vil Passport bruke “Passport-local” strategien for å deklarere om du er autentisert.
+      </p>
+
+    </div> <br>
+
+    <h3 class="headerM" id="Pålogging">Passport JS, sikker rammeverk?</h3> <br>
+
+    <div class="para">
+      <p>Passport JS er en troverdig rammeverk som har blitt brukt av millioner av mennesker, og er
+        trygg å bruke. Programmet i seg selv er sterk, men brukerens egen innføring av dårlig implementerings koder kan
+        svekke nettsiden. Personvernet er trygt når man bruker Passport JS, på grunn av at det er open source rammeverk.
+        Når det gjelder datasikkerhet er det optimalt ønsket nivå, men det er ikke så sikkert mot session fixation.
+        Problemet ligger ikke hos
+        Passport JS, men heller express-session.</p>
+
+    </div>
+
+
+
+    <%- include('partials/footer') %>
